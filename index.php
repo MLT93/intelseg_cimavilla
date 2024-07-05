@@ -20,13 +20,13 @@ $router = new Router();
 
 // El método `addRoute()` añade un nuevo `Endpoint` a mi sitio
 /*
-  1. La ruta raíz o base, es el directorio base donde está alojado el proyecto (/ASATA/TEACHER_FOLDER/SESIONES%20PHP/MVC/gameclubExercise/)
+  1. La ruta raíz o base, es el directorio base donde está alojado el proyecto (/intelseg_cimavilla/)
   2. La ruta del host, es el servidor ('http://localhost')
   3. Por lo tanto, deberé escribir la ruta raíz más el `Endpoint` que yo desee (`/index`, `/list`, `/register`, `/store`, `/detail{id}`) en el primer parámetro de `addRoute()`
   4. Elijo el controlador
   5. Elijo el método (action) 
 */
-$router->addRoute('/ASATA/TEACHER_FOLDER/SESIONES%20PHP/MVC/metereologia/', 'PruebaController', 'index'); // Esta es la ruta principal del directorio del proyecto (desde la raíz del servidor). Es el `home` de la página, y tiene que ser igual que la ruta especificada en `.htaccess`
+$router->addRoute(__DIR__ . '/intelseg_cimavilla/', 'PruebaController', 'index'); // Esta es la ruta principal del directorio del proyecto (desde la raíz del servidor). Es el `home` de la página, y tiene que ser igual que la ruta especificada en `.htaccess`
 
 // Obtener la ruta solicitada
 $_SERVER["REQUEST_URI"]; // Devuelve toda la URI
