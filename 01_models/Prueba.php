@@ -1,7 +1,7 @@
 <?php
-/* Esta clase va a gestionar la tabla `alertas` */
+/* Esta clase va a gestionar la tabla con el mismo nombre en la DB */
 
-class Alerta
+class Prueba
 {
   // Propiedades
   private $connection;
