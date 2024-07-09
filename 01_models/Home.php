@@ -18,36 +18,37 @@ class Home
     }
   }
 
+  
   // Getters y Setters
-  protected function getConnection()
-  {
-    return $this->connection;
-  }
-  protected function setConnection($connection)
-  {
-    $this->connection = $connection;
-  }
+  // protected function getConnection()
+  // {
+  //   return $this->connection;
+  // }
+  // protected function setConnection($connection)
+  // {
+  //   $this->connection = $connection;
+  // }
 
   // Methods
-  public function getAll()
-  {
-    $SQL = "SELECT 
-    FROM  
-    INNER JOIN  ON = ;"; // Aquí saco toda la información necesaria. Además de la info entre las tablas relacionadas por sus Foreign Keys (el último INNER JOIN va exactamente después del Foreign key de clases con calendarios para poder utilizar el Foreign Key anidado en la tabla calendarios y así poder obtener toda la información por completo. `Esto funciona porque al tener un INNER JOIN previo ya enlazado entre clases y calendarios donde devolvemos su ID` (HAY QUE DEVOLVER ESE ID PARA PODER REALIZAR LA CONSULTA), conseguimos esa relación. Entonces simplemente realizamos la consulta entre convocatorias y calendarios)
-    $registros = $this->getConnection()->query($SQL); // Utilizamos los métodos de la instancia `\mysqli`. `query` ejecuta la sentencia y devuelve cosas, `execute` ejecuta solo la sentencia
-    $arrAssoc = $registros->fetch_all(MYSQLI_ASSOC); // Convertimos cada uno de los registros en forma de matriz numérica con arrays asociativos
-    return $arrAssoc;
-  }
+  // public function getAll()
+  // {
+  //   $SQL = "SELECT 
+  //   FROM  
+  //   INNER JOIN  ON = ;"; // Aquí saco toda la información necesaria. Además de la info entre las tablas relacionadas por sus Foreign Keys (el último INNER JOIN va exactamente después del Foreign key de clases con calendarios para poder utilizar el Foreign Key anidado en la tabla calendarios y así poder obtener toda la información por completo. `Esto funciona porque al tener un INNER JOIN previo ya enlazado entre clases y calendarios donde devolvemos su ID` (HAY QUE DEVOLVER ESE ID PARA PODER REALIZAR LA CONSULTA), conseguimos esa relación. Entonces simplemente realizamos la consulta entre convocatorias y calendarios)
+  //   $registros = $this->getConnection()->query($SQL); // Utilizamos los métodos de la instancia `\mysqli`. `query` ejecuta la sentencia y devuelve cosas, `execute` ejecuta solo la sentencia
+  //   $arrAssoc = $registros->fetch_all(MYSQLI_ASSOC); // Convertimos cada uno de los registros en forma de matriz numérica con arrays asociativos
+  //   return $arrAssoc;
+  // }
 
-  public function getAllUsers()
-  {
-    $SQL = "SELECT * 
-    FROM users 
-    INNER JOIN coches ON = users.id_coche = coches.id;"; // Aquí saco toda la información necesaria. Además de la info entre las tablas relacionadas por sus Foreign Keys (el último INNER JOIN va exactamente después del Foreign key de clases con calendarios para poder utilizar el Foreign Key anidado en la tabla calendarios y así poder obtener toda la información por completo. `Esto funciona porque al tener un INNER JOIN previo ya enlazado entre clases y calendarios donde devolvemos su ID` (HAY QUE DEVOLVER ESE ID PARA PODER REALIZAR LA CONSULTA), conseguimos esa relación. Entonces simplemente realizamos la consulta entre convocatorias y calendarios)
-    $registros = $this->getConnection()->query($SQL); // Utilizamos los métodos de la instancia `\mysqli`. `query` ejecuta la sentencia y devuelve cosas, `execute` ejecuta solo la sentencia
-    $arrAssoc = $registros->fetch_all(MYSQLI_ASSOC); // Convertimos cada uno de los registros en forma de matriz numérica con arrays asociativos
-    return $arrAssoc;
-  }
+  // public function getAllUsers()
+  // {
+  //   $SQL = "SELECT * 
+  //   FROM users 
+  //   INNER JOIN coches ON = users.id_coche = coches.id;"; // Aquí saco toda la información necesaria. Además de la info entre las tablas relacionadas por sus Foreign Keys (el último INNER JOIN va exactamente después del Foreign key de clases con calendarios para poder utilizar el Foreign Key anidado en la tabla calendarios y así poder obtener toda la información por completo. `Esto funciona porque al tener un INNER JOIN previo ya enlazado entre clases y calendarios donde devolvemos su ID` (HAY QUE DEVOLVER ESE ID PARA PODER REALIZAR LA CONSULTA), conseguimos esa relación. Entonces simplemente realizamos la consulta entre convocatorias y calendarios)
+  //   $registros = $this->getConnection()->query($SQL); // Utilizamos los métodos de la instancia `\mysqli`. `query` ejecuta la sentencia y devuelve cosas, `execute` ejecuta solo la sentencia
+  //   $arrAssoc = $registros->fetch_all(MYSQLI_ASSOC); // Convertimos cada uno de los registros en forma de matriz numérica con arrays asociativos
+  //   return $arrAssoc;
+  // }
 
 //   public function add() // Al tener en la DB una función que por defecto toma la fecha de registro, dejo `$fecha_inicio` con un valor por defecto vacío
 //   {
@@ -71,29 +72,29 @@ class Home
 //     return $consultaPrepare->execute(); // Ejecuto la consulta
 //   }
 
-  public function getByIDQueryParams()
-  {
-    $id = intval($_GET['id']);
-    $SQL = "SELECT 
-    FROM  
-    INNER JOIN  ON  
-    WHERE id = $id;"; // Aquí saco la info a través de su ID y sus Foreign Keys asociados
-    $registro = $this->getConnection()->query($SQL); // Utilizamos los métodos de la instancia `\mysqli`. `query` ejecuta la sentencia y devuelve cosas, `execute` ejecuta solo la sentencia
-    $arrAssoc = $registro->fetch_all(MYSQLI_ASSOC); // Convertimos cada uno de los registros en forma de matriz numérica con arrays asociativos (que tendrá sólo 1 elemento)
-    return $arrAssoc;
-  }
+  // public function getByIDQueryParams()
+  // {
+  //   $id = intval($_GET['id']);
+  //   $SQL = "SELECT 
+  //   FROM  
+  //   INNER JOIN  ON  
+  //   WHERE id = $id;"; // Aquí saco la info a través de su ID y sus Foreign Keys asociados
+  //   $registro = $this->getConnection()->query($SQL); // Utilizamos los métodos de la instancia `\mysqli`. `query` ejecuta la sentencia y devuelve cosas, `execute` ejecuta solo la sentencia
+  //   $arrAssoc = $registro->fetch_all(MYSQLI_ASSOC); // Convertimos cada uno de los registros en forma de matriz numérica con arrays asociativos (que tendrá sólo 1 elemento)
+  //   return $arrAssoc;
+  // }
 
-  public function getByIDPathVariables($id)
-  {
-    $SQL = "SELECT 
-    FROM  
-    INNER JOIN  ON  
-    WHERE id = $id;"; // Aquí saco la info a través de su ID y sus Foreign Keys asociados
-    $registro = $this->getConnection()->query($SQL); // Utilizamos los métodos de la instancia `\mysqli`. `query` ejecuta la sentencia y devuelve cosas, `execute` ejecuta solo la sentencia
-    $arrAssoc = $registro->fetch_all(MYSQLI_ASSOC); // Convertimos cada uno de los registros en forma de matriz numérica con arrays asociativos (que tendrá sólo 1 elemento)
-    return $arrAssoc;
-  }
+  // public function getByIDPathVariables($id)
+  // {
+  //   $SQL = "SELECT 
+  //   FROM  
+  //   INNER JOIN  ON  
+  //   WHERE id = $id;"; // Aquí saco la info a través de su ID y sus Foreign Keys asociados
+  //   $registro = $this->getConnection()->query($SQL); // Utilizamos los métodos de la instancia `\mysqli`. `query` ejecuta la sentencia y devuelve cosas, `execute` ejecuta solo la sentencia
+  //   $arrAssoc = $registro->fetch_all(MYSQLI_ASSOC); // Convertimos cada uno de los registros en forma de matriz numérica con arrays asociativos (que tendrá sólo 1 elemento)
+  //   return $arrAssoc;
+  // }
 
-  // Static Methods
+  // // Static Methods
 
 }
