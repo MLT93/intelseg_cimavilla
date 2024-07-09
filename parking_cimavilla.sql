@@ -30,10 +30,12 @@ CREATE TABLE roles (
 # Tabla de cars
 CREATE TABLE cars (
     id INT PRIMARY KEY AUTO_INCREMENT,
+    id_user INT NOT NULL,
     car_registration_plate VARCHAR (100) UNIQUE NOT NULL,
     car_brand VARCHAR (100) NOT NULL,
     car_model VARCHAR (100) NOT NULL,
-    car_color VARCHAR (50) NOT NULL
+    car_color VARCHAR (50) NOT NULL,
+    FOREIGN KEY (id_user) REFERENCES users(id) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 # Tabla de users
@@ -41,14 +43,12 @@ CREATE TABLE users (
     id INT PRIMARY KEY AUTO_INCREMENT,
     id_client INT NOT NULL,
     id_role INT NOT NULL,
-    id_car INT NOT NULL,
     username VARCHAR (30) UNIQUE NOT NULL,
     email VARCHAR (200) NOT NULL,
     hashedPassword VARCHAR (200) NOT NULL,
     birthday DATE NOT NULL,
     FOREIGN KEY (id_client) REFERENCES clients(id) ON DELETE CASCADE ON UPDATE CASCADE,
-    FOREIGN KEY (id_role) REFERENCES roles(id) ON DELETE CASCADE ON UPDATE CASCADE,
-    FOREIGN KEY (id_car) REFERENCES cars(id) ON DELETE CASCADE ON UPDATE CASCADE
+    FOREIGN KEY (id_role) REFERENCES roles(id) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 # Tabla de user_sessions

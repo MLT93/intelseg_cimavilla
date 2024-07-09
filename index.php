@@ -27,6 +27,8 @@ $router = new Router();
   5. Elijo el método (action) 
 */
 $router->addRoute(__DIR__ . '/intelseg_cimavilla/', 'PruebaController', 'index'); // Esta es la ruta principal del directorio del proyecto (desde la raíz del servidor). Es el `home` de la página, y tiene que ser igual que la ruta especificada en `.htaccess`
+$router->addRoute(__DIR__ . '/intelseg_cimavilla/', 'UserController', 'create'); // Sacar el formulario para registrarse
+$router->addRoute(__DIR__ . '/intelseg_cimavilla/', 'UserController', 'store'); // Registrar el usuario en BD
 
 // Obtener la ruta solicitada
 $_SERVER["REQUEST_URI"]; // Devuelve toda la URI
