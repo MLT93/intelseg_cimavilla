@@ -23,11 +23,12 @@ class UserController{
 
       if (isset($_POST['registrarUsuario'])) {
          if($_POST['hashedPassword'] == $_POST['hashedPassword2']){
-            $clientId = ""; // No entiendo. 0 pero si hay un cliente - UPDATE en sql??
+            $clientId = 0; // No entiendo. 0 pero si hay un cliente - UPDATE en sql??
             $role = "usuario"; // Cuál tenemos? Por defolt - "user" o algo así
             $username = $_POST['username'];
             $email = $_POST['email'];
             $hashedPassword = $_POST['hashedPassword'];
+            $hashedPassword = password_hash($hashedPassword, PASSWORD_DEFAULT);
             $birthday = $_POST['fechaNac'];
             
             $usuarioModel = new User();
