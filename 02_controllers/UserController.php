@@ -43,7 +43,7 @@ class UserController{
 
 
       // crear un nuevo cliente
-      public function createCliente()
+      public function finalizarPago()
       {
          require "views/home/register_cliente.php";
       }

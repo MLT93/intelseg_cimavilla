@@ -32,10 +32,10 @@ $router->addRoute(__DIR__ . '/intelseg_cimavilla/store/', 'EjemploController', '
 $router->addRoute(__DIR__ . '/intelseg_cimavilla/detail/{id}', 'EjemploController', 'pathVariables'); // Esta es la ruta principal del directorio del proyecto (desde la raíz del servidor). Es el `home` de la página, y tiene que ser igual que la ruta especificada en `.htaccess`
 $router->addRoute(__DIR__ . '/intelseg_cimavilla/detail/', 'EjemploController', 'queryParams'); // Esta es la ruta principal del directorio del proyecto (desde la raíz del servidor). Es el `home` de la página, y tiene que ser igual que la ruta especificada en `.htaccess`
 
-$router->addRoute(__DIR__ . '/intelseg_cimavilla/', 'UserController', 'create'); // Sacar el formulario para registrarse
-$router->addRoute(__DIR__ . '/intelseg_cimavilla/', 'UserController', 'store'); // Registrar el usuario en BD
-$router->addRoute(__DIR__ . '/intelseg_cimavilla/', 'UserController', 'createCliente'); // Sacar el formulario para registrar el ckiente
-$router->addRoute(__DIR__ . '/intelseg_cimavilla/', 'UserController', 'storeCliente'); // Registrar el cliente en BD
+$router->addRoute(__DIR__ . '/intelseg_cimavilla/register/', 'UserController', 'create'); // Sacar el formulario para registrarse
+$router->addRoute(__DIR__ . '/intelseg_cimavilla/store/', 'UserController', 'store'); // Registrar el usuario en BD
+$router->addRoute(__DIR__ . '/intelseg_cimavilla/finalizar-pago/', 'UserController', 'finalizarPago'); // Sacar el formulario para registrar el ckiente
+$router->addRoute(__DIR__ . '/intelseg_cimavilla/store-cliente/', 'UserController', 'storeCliente'); // Registrar el cliente en BD
 
 // Obtener la ruta solicitada
 $_SERVER["REQUEST_URI"]; // Devuelve toda la URI
