@@ -26,7 +26,12 @@ $router = new Router();
   4. Elijo el controlador
   5. Elijo el método (action) 
 */
-$router->addRoute(__DIR__ . '/intelseg_cimavilla/', 'PruebaController', 'index'); // Esta es la ruta principal del directorio del proyecto (desde la raíz del servidor). Es el `home` de la página, y tiene que ser igual que la ruta especificada en `.htaccess`
+$router->addRoute(__DIR__ . '/intelseg_cimavilla/', 'EjemploController', 'index'); // Esta es la ruta principal del directorio del proyecto (desde la raíz del servidor). Es el `home` de la página, y tiene que ser igual que la ruta especificada en `.htaccess`
+$router->addRoute(__DIR__ . '/intelseg_cimavilla/register/', 'EjemploController', 'register'); // Esta es la ruta principal del directorio del proyecto (desde la raíz del servidor). Es el `home` de la página, y tiene que ser igual que la ruta especificada en `.htaccess`
+$router->addRoute(__DIR__ . '/intelseg_cimavilla/store/', 'EjemploController', 'store'); // Esta es la ruta principal del directorio del proyecto (desde la raíz del servidor). Es el `home` de la página, y tiene que ser igual que la ruta especificada en `.htaccess`
+$router->addRoute(__DIR__ . '/intelseg_cimavilla/detail/{id}', 'EjemploController', 'pathVariables'); // Esta es la ruta principal del directorio del proyecto (desde la raíz del servidor). Es el `home` de la página, y tiene que ser igual que la ruta especificada en `.htaccess`
+$router->addRoute(__DIR__ . '/intelseg_cimavilla/detail/', 'EjemploController', 'queryParams'); // Esta es la ruta principal del directorio del proyecto (desde la raíz del servidor). Es el `home` de la página, y tiene que ser igual que la ruta especificada en `.htaccess`
+
 $router->addRoute(__DIR__ . '/intelseg_cimavilla/', 'UserController', 'create'); // Sacar el formulario para registrarse
 $router->addRoute(__DIR__ . '/intelseg_cimavilla/', 'UserController', 'store'); // Registrar el usuario en BD
 

@@ -1,7 +1,7 @@
 <?php
 /* Esta clase va a gestionar la tabla con el mismo nombre en la DB */
 
-class Prueba
+class Ejemplo
 {
   // Propiedades
   private $connection;
