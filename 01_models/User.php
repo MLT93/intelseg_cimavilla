@@ -18,14 +18,14 @@ public function __construct(){
 
 // Obtener todos los usuarios en la BD. Lo necesitamos? Si sí, está hecho
 public function getAllUsers(){
-    $SQLsentencia = "SELECT `id`, `username`, `hashedPassword`, `email` FROM `users` "; //añadir campos?
+    $SQLsentencia = "SELECT `id`, `username`, `hashedPassword`, `email` FROM `users` "; // Añadir campos?
 
     $usuarios= $this->connection->query($SQLsentencia);
     return $usuarios->fetch_all(MYSQLI_ASSOC);
 }
 
 // Registrarse sin coche. Creo que tenemos que añadir formulario para añadir los coches del usuario
-public function addUsuario($clientId, $role, $car, $username, $email, $hashedPassword, $birthday){ // Está hecho
+public function addUsuario($clientId, $role, $username, $email, $hashedPassword, $birthday){ // Está hecho
 
     $SQLprepare = "INSERT INTO `users`(`id_client`, `id_role`, `username`, `email`, `hashedPassword`, `birthday`) VALUES (?,?,?,?,?,?,?)";
 
@@ -35,9 +35,8 @@ public function addUsuario($clientId, $role, $car, $username, $email, $hashedPas
     return $sentenciaPrepare->execute();
 }
 
-client_name client_surname client_phone client_email client_document_type client_document_number client_direction client_region client_country
 
-public function addCliente($name, $surname, $phone, $emailClient, $documentType, $documentNumber, $direction, $region, $country){ // O debe que estar dentro de addUser()? pensar
+public function addCliente($name, $surname, $phone, $emailClient, $documentType, $documentNumber, $direction, $region, $country){ // Está hecho
 
     $SQLprepare = "INSERT INTO `clients`(`client_name`, `client_surname`, `client_phone`, `client_email`, `client_document_type`, `client_document_number`, `client_direction`, `client_region`, `client_country`) VALUES (?,?,?,?,?,?,?,?,?,?)";
 

@@ -9,8 +9,6 @@
 
 <h1>Registrar usuario</h1>
 
-id_client id_role id_car username email hashedPassword birthday
-
 <!-- Añadir enlace -->
 <form action="" method="post">
 
@@ -18,13 +16,15 @@ id_client id_role id_car username email hashedPassword birthday
 <input type="text" name="username" >
 <br/>
 
-<label for="hashedPassword">Password</label>
+<label for="hashedPassword">Cobtraseña</label>
 <input type="password" name="hashedPassword" >
 <br/>
 
-<!-- Repetir contraseña? -->
+<label for="hashedPassword2">Repetir contraseña</label>
+<input type="password" name="hashedPassword2" >
+<br/>
 
-<label for="email">Email</label>
+<label for="email">Correo electrónico</label>
 <input type="email" name="email" >
 <br/>
 
