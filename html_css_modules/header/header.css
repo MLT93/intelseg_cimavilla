@@ -1,0 +1,14 @@
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5rem;
+}
+
+.header img {
+  margin-left: 3rem;
+}
+
+.header h2 {
+  margin-right: 3rem;
+}

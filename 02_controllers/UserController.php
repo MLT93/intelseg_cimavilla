@@ -10,7 +10,6 @@ class UserController{
 
    }
 
-
    // crear un nuevo usuario
    public function create()
    {

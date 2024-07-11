@@ -15,7 +15,6 @@ public function __construct(){
     }
 }
 
-
 // Obtener todos los usuarios en la BD. Lo necesitamos? Si sí, está hecho
 public function getAllUsers(){
     $SQLsentencia = "SELECT `id`, `username`, `hashedPassword`, `email` FROM `users` "; // Añadir campos?
