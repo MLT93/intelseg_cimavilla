@@ -1,14 +1,40 @@
 .header {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  gap: 5rem;
+
+  margin-top: 3rem;
+
+  padding: 0px 3rem;
+}
+
+.header div.header_logo {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 1rem;
+}
+
+.header div.header_login {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 1rem;
+}
+
+.header_login svg {
+  width: 3rem;
 }
 
 .header img {
-  margin-left: 3rem;
+  max-width: 100px;
 }
 
 .header h2 {
-  margin-right: 3rem;
+  font-size: 25px;
+  font-weight: bold;
+
+  letter-spacing: 1px;
+
+  color: rgb(4, 35, 121);
 }
