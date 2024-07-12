@@ -24,7 +24,7 @@ class HomeController
   {
     /* AQUÍ OBTENGO LA INFO DE LOS USUARIOS DE MI DB*/
     $model = new Home(); // Instancia donde se realiza la conexión a la DB
-    $users = $model->getAllUsers(); // Obtengo la información de la DB y la envío a la View `list.ph
+    $users = $model->getAllUsers(); // Obtengo la información de la DB y la envío a la View `login.php`
 
     require "03_views/home/login.php";
   }
@@ -33,7 +33,7 @@ class HomeController
   //   {
   //     /* AQUÍ OBTENGO LA INFO PRINCIPAL DE LOS DE MI DB */
   //     $model = new Home(); // Instancia donde se realiza la conexión a la DB
-  //     $Homes = $model->getAll(); // Obtengo la información de la DB y la envío a la View `list.ph
+  //     $Homes = $model->getAll(); // Obtengo la información de la DB y la envío a la View `list.php`
 
   //     require "03_views/home/list.php";
   //   }
@@ -54,7 +54,7 @@ class HomeController
       $email = $_POST['email'];
       $pass = $_POST['pass'];
 
-      
+
     }
   }
 
