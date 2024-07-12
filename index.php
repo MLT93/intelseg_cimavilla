@@ -27,8 +27,8 @@ $router = new Router();
   5. Elijo el método (action)
 */
 $router->addRoute('/intelseg_cimavilla/', 'HomeController', 'index'); // Esta es la ruta principal del directorio del proyecto (desde la raíz del servidor). Es el `home` de la página, y tiene que ser igual que la ruta especificada en `.htaccess`
-$router->addRoute('/intelseg_cimavilla/register/', 'EjemploController', 'register'); // Esta es la ruta principal del directorio del proyecto (desde la raíz del servidor). Es el `home` de la página, y tiene que ser igual que la ruta especificada en `.htaccess`
-$router->addRoute('/intelseg_cimavilla/store/', 'EjemploController', 'store'); // Esta es la ruta principal del directorio del proyecto (desde la raíz del servidor). Es el `home` de la página, y tiene que ser igual que la ruta especificada en `.htaccess`
+$router->addRoute('/intelseg_cimavilla/login/', 'HomeController', 'login'); // Esta es la ruta principal del directorio del proyecto (desde la raíz del servidor). Es el `home` de la página, y tiene que ser igual que la ruta especificada en `.htaccess`
+$router->addRoute('/intelseg_cimavilla/login/check/', 'HomeController', 'checkUser'); // Esta es la ruta principal del directorio del proyecto (desde la raíz del servidor). Es el `home` de la página, y tiene que ser igual que la ruta especificada en `.htaccess`
 $router->addRoute('/intelseg_cimavilla/detail/{id}', 'EjemploController', 'pathVariables'); // Esta es la ruta principal del directorio del proyecto (desde la raíz del servidor). Es el `home` de la página, y tiene que ser igual que la ruta especificada en `.htaccess`
 $router->addRoute('/intelseg_cimavilla/detail/', 'EjemploController', 'queryParams'); // Esta es la ruta principal del directorio del proyecto (desde la raíz del servidor). Es el `home` de la página, y tiene que ser igual que la ruta especificada en `.htaccess`
 
