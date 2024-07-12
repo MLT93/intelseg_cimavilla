@@ -6,28 +6,37 @@
   margin-top: 3rem;
 
   padding: 0px 3rem;
+
+  height: 6.5rem;
 }
 
-.header div.header_logo {
+.header_logo {
   display: flex;
   justify-content: flex-start;
   align-items: center;
   gap: 1rem;
+
+  height: inherit;
 }
 
-.header div.header_login {
+.header_login_cart {
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  gap: 1rem;
+  gap: 3rem;
+
+  width: 100%;
+  height: inherit;
 }
 
-.header_login svg {
+.header_login_cart svg {
   width: 3rem;
+  height: inherit;
 }
 
 .header img {
   max-width: 100px;
+  height: inherit;
 }
 
 .header h2 {
@@ -36,5 +45,5 @@
 
   letter-spacing: 1px;
 
-  color: rgb(4, 35, 121);
+  color: rgb(0, 50, 112);
 }
