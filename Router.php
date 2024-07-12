@@ -33,17 +33,16 @@ class Router
 
   public function dispatch($uri)
   {
-
     /* 
       1. Controlamos las rutas que posea el array `routes[]`, donde `$key` será cada ruta y `$value` el array anidado en esa clave con el controller y el método 
       2. `preg_replace` toma `$key` y sustituye el primer parámetro con el segundo. Se utilizan expresiones regulares porque nunca sabremos exactamente qué posee esa `Path Variable`
-      3. El primer parámetro busca todos el contenido alfanumérico que esté entre `{}` => /ASATA/TEACHER_FOLDER/SESIONES%20PHP/MVC/almacen/productos/detail/{id}
+      3. El primer parámetro busca todos el contenido alfanumérico que esté entre llaves `{}` => /parking_cimavilla/detail/{id}
       4. El segundo parámetro reemplaza el primero con contenido alfanumérico
       5. El tercer parámetro es la variable donde se realizan los cambios
       6. Asignamos a una variable para poder realizar el `if`
     */
     foreach ($this->getRoutes() as $key => $value) {
-      $pathPattern = preg_replace('#{[a-zA-Z][a-zA-Z0-9]*}#', '([a-zA-Z0-9]+)', $key); // #:[a-zA-Z][a-zA-Z0-9]*# con `:` al principio => /ASATA/TEACHER_FOLDER/SESIONES%20PHP/MVC/almacen/productos/detail/:id
+      $pathPattern = preg_replace('#{[a-zA-Z][a-zA-Z0-9]*}#', '([a-zA-Z0-9]+)', $key); // Código para `:` al principio del `Query Param`. Código: `#:[a-zA-Z][a-zA-Z0-9]*#`. Ejemplo de ruta: `/parking_cimavilla/detail/:id`
 
       // Comprobamos si alguna de las `$pathPattern` coinciden con la URI del navegador, y se almacena en `$matches`
       if (preg_match("#^$pathPattern$#", $uri, $matches)) {
@@ -70,4 +69,5 @@ class Router
   }
 
   // Static Methods
+
 }
