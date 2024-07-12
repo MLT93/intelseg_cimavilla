@@ -6,25 +6,24 @@ require 'models/User.php';
 class UserController{
 
    public function home(){ // ??
-    require "views/home/home.php";
-
+    require "03_views/home/home.php";
    }
 
-   // crear un nuevo usuario
+   // Crear un nuevo usuario
    public function create()
    {
-      require "views/home/register_user.php";
+      require "03_views/home/register_user.php";
    }
 
 
-   //obtener los datos del formulario
+   // Obtener los datos del formulario
    public function store()
    {
 
       if (isset($_POST['registrarUsuario'])) {
          if($_POST['hashedPassword'] == $_POST['hashedPassword2']){
             $clientId = 0; // No entiendo. 0 pero si hay un cliente - UPDATE en sql??
-            $role = "usuario"; // Cuál tenemos? Por defolt - "user" o algo así
+            $role = "User"; // Cuál tenemos? Por default - "user" o algo así
             $username = $_POST['username'];
             $email = $_POST['email'];
             $hashedPassword = $_POST['hashedPassword'];
@@ -42,10 +41,10 @@ class UserController{
    }
 
 
-      // crear un nuevo cliente
+      // Crear un nuevo cliente
       public function finalizarPago()
       {
-         require "views/home/register_cliente.php";
+         require "03_views/home/register_pago.php";
       }
    
    
