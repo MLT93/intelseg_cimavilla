@@ -141,11 +141,11 @@ CREATE TABLE
         payment_method VARCHAR(100) NOT NULL
     ) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4 COLLATE = utf8mb4_unicode_ci;
 
-/* Tabla de taxs */
-DROP TABLE IF EXISTS taxs;
+/* Tabla de taxes */
+DROP TABLE IF EXISTS taxes;
 
 CREATE TABLE
-    taxs (
+    taxes (
         id INT PRIMARY KEY AUTO_INCREMENT,
         tax_type VARCHAR(100) NOT NULL COMMENT 'IVA, ecc...',
         tax DECIMAL(10, 2) NOT NULL
@@ -165,7 +165,7 @@ CREATE TABLE
         total_price DECIMAL(10, 2) NOT NULL,
         FOREIGN KEY (id_client) REFERENCES clients (id) ON DELETE CASCADE ON UPDATE CASCADE,
         FOREIGN KEY (id_payment_method) REFERENCES payment_methods (id) ON DELETE CASCADE ON UPDATE CASCADE,
-        FOREIGN KEY (id_tax) REFERENCES taxs (id) ON DELETE CASCADE ON UPDATE CASCADE
+        FOREIGN KEY (id_tax) REFERENCES taxes (id) ON DELETE CASCADE ON UPDATE CASCADE
     ) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4 COLLATE = utf8mb4_unicode_ci;
 
 /* Tabla de reservation_details */
